@@ -1,383 +1,277 @@
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Facebook, Instagram, Zap, Shield, BarChart3, MessageSquare, Users, Target } from "lucide-react";
+import { Zap, Bot, MessageCircle, Shield, BarChart3, Sparkles, CheckCircle, ArrowRight, Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      {/* Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                SocialBot AI
-              </span>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-700 hover:text-blue-600 transition-colors">Features</a>
-              <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">Pricing</a>
-              <Link to="/login" className="text-gray-700 hover:text-blue-600 transition-colors">Login</Link>
-              <Link to="/signup">
-                <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                  Get Started
-                </Button>
-              </Link>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+      {/* Animated background elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
+      </div>
 
-            <button
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className={`block w-5 h-0.5 bg-gray-600 transition-all ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
-                <span className={`block w-5 h-0.5 bg-gray-600 mt-1 transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block w-5 h-0.5 bg-gray-600 mt-1 transition-all ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
-              </div>
-            </button>
+      {/* Navigation */}
+      <nav className="relative z-50 p-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center space-x-3 group">
+            <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300 shadow-lg shadow-cyan-500/25">
+              <Zap className="w-7 h-7 text-white" />
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">
+              SocialBot AI
+            </span>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <Link to="/login">
+              <Button variant="ghost" className="text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
+                Login
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transform hover:scale-105 transition-all duration-300 border-0">
+                Get Started
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 py-4">
-            <div className="px-4 space-y-3">
-              <a href="#features" className="block text-gray-700 hover:text-blue-600">Features</a>
-              <a href="#pricing" className="block text-gray-700 hover:text-blue-600">Pricing</a>
-              <Link to="/login" className="block text-gray-700 hover:text-blue-600">Login</Link>
-              <Link to="/signup" className="block">
-                <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600">Get Started</Button>
-              </Link>
-            </div>
-          </div>
-        )}
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <Badge className="mb-6 bg-blue-100 text-blue-700 hover:bg-blue-100">
-            <Zap className="w-4 h-4 mr-1" />
-            AI-Powered Social Media Automation
+      <section className="relative z-10 px-6 py-20">
+        <div className="max-w-5xl mx-auto text-center">
+          <Badge className="mb-8 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-300 border-cyan-500/30 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+            <Sparkles className="w-4 h-4 mr-2" />
+            AI-Powered Social Automation
           </Badge>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent leading-tight">
-            Automate Your Social Media Replies
+          <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
+              Automate Your
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse">
+              Social Media
+            </span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Never miss a message or comment again. Our AI automatically responds to your Facebook and Instagram interactions 
-            with personalized, context-aware replies that sound just like you.
+          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Let AI handle your Facebook and Instagram messages and comments. 
+            Engage with your audience 24/7 while you focus on growing your business.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/signup">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-4 h-auto">
+              <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/50 transform hover:scale-110 transition-all duration-300 text-lg px-8 py-6 border-0 group">
                 Start Free Trial
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </Link>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto border-2">
+            <Button variant="outline" size="lg" className="border-gray-600 text-gray-300 hover:bg-white/10 hover:border-gray-400 backdrop-blur-sm transition-all duration-300 px-8 py-6 group">
               Watch Demo
+              <Bot className="w-5 h-5 ml-2 group-hover:animate-bounce transition-all duration-300" />
             </Button>
-          </div>
-
-          <div className="flex items-center justify-center space-x-8 text-gray-500">
-            <div className="flex items-center space-x-2">
-              <Facebook className="w-8 h-8 text-blue-600" />
-              <span className="font-medium">Facebook</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Instagram className="w-8 h-8 text-pink-600" />
-              <span className="font-medium">Instagram</span>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative z-10 px-6 py-20">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Powerful Features</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Everything you need to automate and scale your social media engagement
-            </p>
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Futuristic Features
+            </h2>
+            <p className="text-gray-400 text-lg">Advanced AI technology meets seamless automation</p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-4">
-                  <MessageSquare className="w-6 h-6 text-blue-600" />
-                </div>
-                <CardTitle className="text-xl">Smart Auto-Replies</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">AI-powered responses that understand context and maintain your brand voice across all interactions.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center mb-4">
-                  <Target className="w-6 h-6 text-purple-600" />
-                </div>
-                <CardTitle className="text-xl">Custom Templates</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Create personalized response templates for different scenarios and let AI handle the rest.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center mb-4">
-                  <BarChart3 className="w-6 h-6 text-green-600" />
-                </div>
-                <CardTitle className="text-xl">Analytics Dashboard</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Track engagement metrics, response rates, and optimize your automation strategy with detailed insights.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-orange-600" />
-                </div>
-                <CardTitle className="text-xl">Brand Safety</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Advanced filters and moderation ensure all automated responses align with your brand guidelines.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-pink-600" />
-                </div>
-                <CardTitle className="text-xl">Multi-Account Support</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Manage multiple Facebook and Instagram accounts from a single dashboard with ease.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-all duration-300 border-0 shadow-md">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-indigo-600" />
-                </div>
-                <CardTitle className="text-xl">Real-time Processing</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Instant responses to messages and comments ensure your audience never waits for engagement.</p>
-              </CardContent>
-            </Card>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: MessageCircle,
+                title: "Smart Auto-Reply",
+                description: "AI responds to messages instantly with contextual, human-like responses",
+                color: "from-cyan-400 to-blue-500"
+              },
+              {
+                icon: Bot,
+                title: "AI Comment Manager",
+                description: "Automatically engage with comments using advanced natural language processing",
+                color: "from-purple-400 to-pink-500"
+              },
+              {
+                icon: Facebook,
+                title: "Multi-Platform",
+                description: "Seamlessly manage Facebook and Instagram from one unified dashboard",
+                color: "from-green-400 to-emerald-500"
+              },
+              {
+                icon: Shield,
+                title: "Enterprise Security",
+                description: "Bank-level encryption and security protocols protect your data",
+                color: "from-orange-400 to-red-500"
+              },
+              {
+                icon: BarChart3,
+                title: "Advanced Analytics",
+                description: "Real-time insights and performance metrics with AI-powered recommendations",
+                color: "from-blue-400 to-indigo-500"
+              },
+              {
+                icon: Sparkles,
+                title: "Smart Learning",
+                description: "AI learns from your brand voice and improves responses over time",
+                color: "from-pink-400 to-purple-500"
+              }
+            ].map((feature, index) => (
+              <Card key={index} className="bg-white/5 border-white/10 backdrop-blur-xl hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group cursor-pointer">
+                <CardHeader className="text-center pb-4">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-all duration-300 shadow-lg group-hover:shadow-2xl`}>
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle className="text-white group-hover:text-cyan-300 transition-colors duration-300">
+                    {feature.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <CardDescription className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative z-10 px-6 py-20">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose the plan that fits your needs. All plans include our core automation features.
-            </p>
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Choose Your Power Level
+            </h2>
+            <p className="text-gray-400 text-lg">Flexible plans that scale with your business</p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">Starter</CardTitle>
-                <CardDescription className="text-base">Perfect for small businesses</CardDescription>
-                <div className="mt-6">
-                  <span className="text-4xl font-bold">$29</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Up to 1,000 auto-replies/month</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>2 social media accounts</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Basic analytics</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Email support</span>
-                </div>
-                <Button className="w-full mt-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                  Get Started
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-blue-500 shadow-lg relative">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white">
-                Most Popular
-              </Badge>
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">Professional</CardTitle>
-                <CardDescription className="text-base">For growing businesses</CardDescription>
-                <div className="mt-6">
-                  <span className="text-4xl font-bold">$79</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Up to 5,000 auto-replies/month</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>10 social media accounts</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Advanced analytics</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Priority support</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Custom templates</span>
-                </div>
-                <Button className="w-full mt-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                  Get Started
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl mb-2">Enterprise</CardTitle>
-                <CardDescription className="text-base">For large organizations</CardDescription>
-                <div className="mt-6">
-                  <span className="text-4xl font-bold">$199</span>
-                  <span className="text-gray-600">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Unlimited auto-replies</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Unlimited accounts</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Enterprise analytics</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>24/7 phone support</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-green-600" />
-                  <span>Custom integrations</span>
-                </div>
-                <Button className="w-full mt-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                  Contact Sales
-                </Button>
-              </CardContent>
-            </Card>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Starter",
+                price: "$29",
+                description: "Perfect for small businesses",
+                features: ["1,000 AI responses/month", "2 social accounts", "Basic analytics", "Email support"],
+                popular: false
+              },
+              {
+                name: "Pro",
+                price: "$79",
+                description: "Most popular for growing brands",
+                features: ["10,000 AI responses/month", "10 social accounts", "Advanced analytics", "Priority support", "Custom AI training"],
+                popular: true
+              },
+              {
+                name: "Enterprise",
+                price: "$199",
+                description: "For large organizations",
+                features: ["Unlimited AI responses", "Unlimited accounts", "White-label solution", "Dedicated support", "Custom integrations"],
+                popular: false
+              }
+            ].map((plan, index) => (
+              <Card key={index} className={`relative bg-white/5 border-white/10 backdrop-blur-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-4 group cursor-pointer ${plan.popular ? 'border-cyan-500/50 shadow-2xl shadow-cyan-500/25' : ''}`}>
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white border-0 shadow-lg">
+                      Most Popular
+                    </Badge>
+                  </div>
+                )}
+                <CardHeader className="text-center pb-6">
+                  <CardTitle className="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
+                    {plan.name}
+                  </CardTitle>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                      {plan.price}
+                    </span>
+                    <span className="text-gray-400">/month</span>
+                  </div>
+                  <CardDescription className="text-gray-400 mt-2">
+                    {plan.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-5 h-5 text-cyan-400 mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button className={`w-full ${plan.popular ? 'bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/25' : 'bg-white/10 hover:bg-white/20 border border-white/20'} transition-all duration-300 transform group-hover:scale-105`}>
+                    Get Started
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Footer */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
+      {/* CTA Section */}
+      <section className="relative z-10 px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Transform Your Social Media?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of businesses already using SocialBot AI to automate their social media engagement.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/signup">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 h-auto">
-                Start Your Free Trial
-              </Button>
-            </Link>
-            <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 h-auto">
-              Schedule Demo
-            </Button>
-          </div>
+          <Card className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border-cyan-500/30 backdrop-blur-xl">
+            <CardContent className="p-12">
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Ready to Enter the Future?
+              </h2>
+              <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+                Join thousands of businesses already using AI to transform their social media presence. 
+                Start your free trial today and experience the power of automated engagement.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/signup">
+                  <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/50 transform hover:scale-110 transition-all duration-300 text-lg px-12 py-6 border-0 group">
+                    Start Free Trial
+                    <Sparkles className="w-5 h-5 ml-2 group-hover:animate-spin transition-all duration-300" />
+                  </Button>
+                </Link>
+                <Button variant="outline" size="lg" className="border-gray-600 text-gray-300 hover:bg-white/10 hover:border-gray-400 backdrop-blur-sm transition-all duration-300 px-12 py-6">
+                  Contact Sales
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold">SocialBot AI</span>
-              </div>
-              <p className="text-gray-400">
-                Automate your social media engagement with AI-powered responses.
-              </p>
+      <footer className="relative z-10 px-6 py-12 border-t border-white/10 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="flex items-center justify-center space-x-3 mb-6 group">
+            <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-all duration-300">
+              <Zap className="w-6 h-6 text-white" />
             </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Product</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">API</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-              </ul>
-            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-cyan-300 to-purple-400 bg-clip-text text-transparent">
+              SocialBot AI
+            </span>
           </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 SocialBot AI. All rights reserved.</p>
+          <p className="text-gray-400 mb-6">
+            Empowering businesses with AI-driven social media automation
+          </p>
+          <div className="flex justify-center space-x-8 text-gray-400">
+            <a href="#" className="hover:text-cyan-400 transition-colors duration-300">Privacy</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors duration-300">Terms</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors duration-300">Contact</a>
+            <a href="#" className="hover:text-cyan-400 transition-colors duration-300">Support</a>
           </div>
         </div>
       </footer>
